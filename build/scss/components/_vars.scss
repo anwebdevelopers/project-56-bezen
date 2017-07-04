@@ -1,0 +1,32 @@
+@import "bourbon";
+
+$light: #02a9e1;
+$medium: #006bd2;
+$dark: #045581;
+$gray: #abc3ca;
+
+@mixin btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// -webkit-appearance: none;
+// -moz-appearance: none;
+// -ms-appearance: none;
+// -o-appearance: none;
+// appearance: none!important;
+
+// &::-ms-expand {
+//     display: none;
+// }
