@@ -1,0 +1,120 @@
+.about {
+    @extend .section;
+}
+.about__container {
+    @extend .container;
+}
+.about__title {
+    @extend .title;
+}
+.about__box {
+    margin: 6rem 0 0 0;
+
+    display: flex;
+}
+.about__text {
+    @extend .tilde;
+    flex: 0 0 auto;
+    width: 37%;
+    padding: 8rem 2rem 8rem 6rem;
+    border: 2rem solid transparent;
+    border-image: url(../img/bg-about.jpg) 27;
+    font-size: 2rem;
+    line-height: 1.6;
+    &:before {
+        left: 2rem;
+        color: $light;
+    }
+    > *:first-child {
+        margin-top: 0;
+    }
+    p {
+        margin: 4rem 0 0 0;
+    }
+}
+.about__advantages {
+    flex: 0 0 auto;
+    width: 55%;
+    margin: 0 0 0 8%;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.about__advantages-item {
+    flex: 0 0 auto;
+    width: calc(50% - 4rem);
+    margin: 6rem 2rem 0 2rem;
+    line-height: 1.4;
+    &:nth-child(1),
+    &:nth-child(2) {
+        margin-top: 0;
+    }
+    b {
+        display: block;
+        font-size: 7rem;
+        line-height: 1;
+		font-weight: 500;
+        letter-spacing: -.05em;
+		font-family: 'PF Din Text Comp Pro';
+		color: $light;
+    }
+}
+@media only screen and (max-width : 1600px) {
+
+}
+
+@media only screen and (max-width : 1400px) {
+
+}
+
+@media only screen and (max-width : 1200px) {
+    .about__text {
+        width: 40%;
+    }
+    .about__advantages {
+        width: 58%;
+        margin: 0 0 0 2%;
+    }
+}
+
+@media only screen and (max-width : 960px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+    .about__box {
+        display: block;
+    }
+    .about__text {
+        width: auto;
+    }
+    .about__advantages {
+        width: auto;
+        margin: 6rem 0 0 0;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+    .about__advantages {
+        display: block;
+    }
+    .about__advantages-item {
+        width: auto;
+        margin: 5rem 0 0 0;
+        text-align: center;
+        &:nth-child(1),
+        &:nth-child(2) {
+            margin: 5rem 0 0 0;
+        }
+    }
+}

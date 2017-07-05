@@ -40,7 +40,7 @@ body textarea:required:valid {
 }
 
 html {
-	height: 100%;
+	height: 100% !important;
 	font-size: 10px;
 }
 body {
@@ -61,7 +61,35 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
+.section {
+	padding: 7rem 0;
+	>[class*="__container"] > [class*="__title"],
+	>[class*="__container"] > [class*="__box"] {
+		padding-left: 8rem;
+		padding-right: 8rem;
+	}
+}
+.counter {
+	position: absolute;
+	left: 7rem;
+}
+.counter__number {
+	vertical-align: top;
+	font-size: 4rem;
+	line-height: 1;
+	font-weight: 300;
+	font-family: 'PF Din Text Comp Pro';
+	color: $light;
+}
+.counter__quantity {
+	vertical-align: top;
+	font-size: 1.6rem;
+	line-height: 1.4;
+	color: $gray;
+}
+
 .container {
+	position: relative;
 	max-width: 1600px;
 	padding: 0 7rem;
 	margin: 0 auto;
@@ -72,7 +100,21 @@ body {
 	clear: both;
 }
 .title {
+	margin: 0;
+	font-size: 5.5rem;
+	line-height: 1;
+	font-weight: 800;
 	font-family: 'Circe';
+	color: $dark;
+	&:after {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 10rem;
+		height: 2px;
+		margin: 0 0 0 2rem;
+		background-color: $light;
+	}
 }
 .button {
 	@include btn;
@@ -87,6 +129,19 @@ body {
 		background-color: $medium;
 	}
 }
+.tilde {
+	position: relative;
+	// padding-left: 6rem;
+	&:before {
+		content: '~';
+		position: absolute;
+		font-family: Georgia;
+		font-size: 3.2rem;
+		line-height: 1;
+		font-weight: 600;
+		color: currentColor;
+	}
+}
 .hidden {
 	display: none;
 }
@@ -99,8 +154,18 @@ a {
         font-size: 9.5px;
     }
 	.container {
-		max-width: 1400px;
+		//max-width: 1400px;
 		padding: 0 6rem;
+	}
+	.counter {
+		left: 6rem;
+	}
+	.section {
+		>[class*="__container"] > [class*="__title"],
+		>[class*="__container"] > [class*="__box"] {
+			padding-left: 6rem;
+			padding-right: 6rem;
+		}
 	}
 }
 
@@ -109,8 +174,18 @@ a {
         font-size: 9px;
     }
 	.container {
-		max-width: 1200px;
+		//max-width: 1200px;
 		padding: 0 5rem;
+	}
+	.counter {
+		left: 5rem;
+	}
+	.section {
+		>[class*="__container"] > [class*="__title"],
+		>[class*="__container"] > [class*="__box"] {
+			padding-left: 5rem;
+			padding-right: 5rem;
+		}
 	}
 }
 
@@ -119,8 +194,20 @@ a {
         font-size: 8.5px;
     }
 	.container {
-		max-width: 960px;
+		//max-width: 960px;
 		padding: 0 4rem;
+	}
+	.counter {
+		position: static;
+		left: auto;
+		margin: 0 0 2rem 0;
+	}
+	.section {
+		>[class*="__container"] > [class*="__title"],
+		>[class*="__container"] > [class*="__box"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 }
 
@@ -129,23 +216,33 @@ a {
         font-size: 8px;
     }
 	.container {
-		max-width: 768px;
+		//max-width: 768px;
 		padding: 0 3rem;
 	}
 }
 
 @media only screen and (max-width : 768px) {
+	html {
+        font-size: 7.5px;
+    }
 	.container {
 		padding: 0 15px;
 	}
 }
 
 @media only screen and (max-width : 640px) {
-
+	html {
+        font-size: 7px;
+    }
+	.title {
+		font-size: 5rem;
+	}
 }
 
 @media only screen and (max-width : 480px) {
-
+	.title {
+		font-size: 4rem;
+	}
 }
 
 @media only screen and (max-width : 360px) {
@@ -154,6 +251,9 @@ a {
 
 //Custom Styles Here
 @import "components/header.scss";
+@import "components/about.scss";
+@import "components/video.scss";
+@import "components/news.scss";
 
 //@import "build/scss/components/magnific-popup.scss";
 
