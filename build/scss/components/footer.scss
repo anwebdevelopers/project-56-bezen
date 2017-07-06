@@ -1,0 +1,27 @@
+.footer {
+    @extend .section;
+    background-color: $dark;
+    background-image: url(../img/bg-footer.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+.footer__container {
+    @extend .container;
+}
+.footer__box {
+    display: flex;
+    justify-content: space-between;
+}
+.footer__nav {
+    flex: 1.2 1 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__wrap {
+    flex: 1 1 auto;
+}
+.footer__nav-item {
+
+}

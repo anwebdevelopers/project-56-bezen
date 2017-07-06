@@ -40,7 +40,7 @@ $(function() {
     });
 
     /*******************************************************/
-    //First Screen Slider
+    //FIRST SCREEN SLIDER
     /*******************************************************/
     var $headerBanner = $('.header__banner');
     if ($headerBanner.length > 1) {
@@ -59,7 +59,7 @@ $(function() {
     }
 
     //------------------------------------------------------------
-    //Slider gallery
+    //SLIDER NEWS
     //------------------------------------------------------------
     $('.news__box').addClass('owl-carousel').owlCarousel({
         loop: true,
@@ -82,8 +82,24 @@ $(function() {
         }
     });
 
+    /*******************************************************/
+    //NEWS SLIDER
+    /*******************************************************/
+    // $headerBanner.wrapAll('<div class="header__slider owl-carousel"></div>');
+    $('.research__box').addClass('owl-carousel').owlCarousel({
+        // animateOut: 'fadeOut',
+        // animateIn: 'fadeIn',
+        loop: true,
+        items: 1,
+        nav: true,
+        navText: '',
+        autoplay: true,
+        autoplayTimeout: 10000,
+        smartSpeed: 1200
+    });
+
     //------------------------------------------------------------
-    //Hover fo IOS
+    //HOVER FOR IOS
     //------------------------------------------------------------
     $('.news__item').hover(function() {
         $(this).addClass('active');
@@ -103,8 +119,8 @@ $(function() {
 
     };
 
-    $('img, a').on('dragstart', function(event) {
-        event.preventDefault();
+    $('img, a').on('dragstart', function(e) {
+        e.preventDefault();
     });
 
     /*******************************************************/
@@ -113,9 +129,8 @@ $(function() {
 
     var $header = $('.header');
     function fullscreen() {
-        $header.removeAttr('style');
         if($html.hasClass('ie') || $html.hasClass('gecko')) {
-
+            $header.removeAttr('style');
             var windowHeight = $window.height(),
                 headerHeight = $header.height();
             if ( windowHeight >= headerHeight ) {
@@ -140,6 +155,6 @@ $(function() {
     /*******************************************************/
     var $section = $('.section');
     $section.each(function() {
-        $(this).find('[class*="__container"]').prepend('<div class="counter"><span class="counter__number">' + ($(this).index('.section') + 1) + '</span><span class="counter__quantity"> / ' + $section.length + '</span></div>');
+        $(this).find('[class*="__container"]').prepend('<div class="counter"><span class="counter__number">' + ($(this).index('.section') + 1) + '</span><span class="counter__quantity"> /' + $section.length + '</span></div>');
     });
 });
