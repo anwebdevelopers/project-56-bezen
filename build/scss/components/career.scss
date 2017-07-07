@@ -1,0 +1,88 @@
+.career {
+    @extend .section;
+}
+.career__container {
+    @extend .container;
+}
+.career__box {
+    display: flex;
+    flex-wrap: wrap;
+}
+.career__item {
+    flex: 0 0 auto;
+    width: 45%;
+    margin: 0 5% 10rem 0;
+}
+.career__item-title {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-family: 'Circe';
+    color: $dark;
+}
+.career__item-text {
+    margin: 5rem 0 0 0;
+    font-size: 2rem;
+    line-height: 1.6;
+}
+.career__list {
+    margin: 5rem 0 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 2rem;
+    li {
+        position: relative;
+        padding: 0 0 0 1rem;
+        margin: 1rem 0 0 0;
+        &:before {
+            content: '';
+            position: absolute;
+            top: .8rem;
+            left: 0;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: currentColor;
+        }
+    }
+}
+.career__button {
+    margin: 5rem 0 0 0;
+}
+@media only screen and (max-width : 1600px) {
+
+}
+
+@media only screen and (max-width : 1400px) {
+
+}
+
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 960px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+    .career__box {
+        display: block;
+    }
+    .career__item {
+        width: auto;
+        margin: 0 0 10rem 0;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+
+}

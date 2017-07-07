@@ -148,7 +148,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: transparentize(#000, .7);
+        background-color: transparentize($dark, .7);
     }
 
     &:nth-child(6n-5),

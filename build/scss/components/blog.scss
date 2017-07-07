@@ -1,5 +1,5 @@
 .blog {
-    background-color: #fafdfe;
+    @extend .section;
 }
 .blog__container {
     @extend .container;
@@ -11,6 +11,7 @@
     margin: 8rem 0 0 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .blog__item {
     flex: 0 0 auto;

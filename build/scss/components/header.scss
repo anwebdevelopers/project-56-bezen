@@ -1,7 +1,11 @@
 .header {
-    padding: 0 0 7rem 0;
-    display: flex;
-    min-height: 100%;
+}
+.home {
+    .header {
+        display: flex;
+        min-height: 100%;
+        padding: 0 0 7rem 0;
+    }
 }
 .header__container {
     @extend .container;
@@ -407,6 +411,71 @@
     &.header__banner_color_white {
         color: #fff;
     }
+    &.header__banner_page {
+        display: block;
+        padding: 7rem 7rem 10rem 7rem;
+        color: #fff;
+        &.header__banner_photo {
+            position: relative;
+            padding-right: calc(33% + 7rem);
+            ~ .header__content {
+                padding-right: calc(33% + 7rem);
+            }
+        }
+    }
+}
+// .header__box {
+//
+//     padding: 7rem 7rem 10rem 7rem;
+//     background-color: lighten($light, 52%);
+//     background-size: cover;
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     color: #fff;
+// }
+.header__content {
+    @extend .tilde;
+    &:before {
+        color: $light;
+        left: 2rem;
+        line-height: 0.8;
+    }
+    position: relative;
+    padding: 6rem 7rem 7rem 7rem;
+    font-size: 2rem;
+    line-height: 1.6;
+    background-color: #fafdfe;
+    p {
+        margin: 2rem 0 0 0;
+    }
+    > :first-child {
+        margin-top: 0;
+    }
+}
+.header__breadcrumbs {
+    font-size: 1.4rem;
+    a {
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+        &:after {
+            content: '>';
+            margin: 0 .5rem 0 1rem;
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        transition: all .5s ease;
+        &:hover, &:active {
+            color: lighten($light, 20%);
+        }
+    }
+    ~ .header__title,
+    ~ .header__subtitle {
+        margin-top: 6rem;
+    }
 }
 
 .header__title {
@@ -420,7 +489,7 @@
 }
 .header__subtitle {
     flex: 0 1 auto;
-    margin: 1rem 0 0 0;
+    margin: 2rem 0 0 0;
     font-size: 3.5rem;
     line-height: 1;
     font-weight: 600;
@@ -443,6 +512,25 @@
     @extend .button;
     flex: 0 1 auto;
     margin: 6rem 0 0 0;
+}
+.header__photo {
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    right: 7rem;
+    top: 12rem;
+    width: 30%;
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.header__date {
+    position: absolute;
+    top: 7rem;
+    right: 7rem;
+    font-size: 1.5rem;
 }
 @media only screen and (max-width : 1600px) {
 
@@ -562,6 +650,26 @@
                 background-color: transparentize(#000, .4);
             }
         }
+        &.header__banner_page {
+            padding: 5rem 5rem 7rem 5rem;
+            &.header__banner_page {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .header__photo {
+        top: 10rem;
+        right: 5rem;
+    }
+    .header__date {
+        top: 5rem;
+        right: 5rem;
+    }
+
+    .header__content {
+        padding: 5rem 5rem 6rem 5rem;
     }
 }
 
@@ -574,6 +682,7 @@
 @media only screen and (max-width : 640px) {
     .header__banner {
         padding: 5rem 5rem 7rem 5rem;
+
     }
     .header__title {
         font-size: 6rem;
@@ -594,6 +703,34 @@
     .header__banner {
         padding: 5rem 15px 7rem 15px;
         text-align: center;
+        &.header__banner_page {
+            padding: 5rem 15px 7rem 15px;
+            &.header__banner_photo {
+                padding-right: 15px;
+                ~ .header__content {
+                    padding-right: 3rem;
+                }
+            }
+        }
+    }
+    .header__photo {
+        position: static;
+        width: auto;
+        margin: 3rem 0 0 0;
+    }
+    .header__date {
+        position: static;
+        margin: 1rem 0 0 0;
+    }
+    // .header__box {
+    //     padding: 5rem 15px 7rem 15px;
+    //     text-align: center;
+    // }
+    .header__content {
+        &:before {
+            left: 1rem;
+        }
+        padding: 5rem 3rem 6rem 5rem;
     }
     .header__title {
         font-size: 5rem;

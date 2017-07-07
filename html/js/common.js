@@ -7,6 +7,7 @@ $(function() {
     /*******************************************************/
     var $window = $(window),
         $html = $('html'),
+        $body = $('body'),
         w = $window.width();
 
 
@@ -24,6 +25,7 @@ $(function() {
     //SUBMENU MOBILE
     /*******************************************************/
     $headerMenu.find('a').click(function(e) {
+        w = $window.width();
         if (w <= 960) {
             var $this = $(this),
                 $ul = $this.next('ul'),
@@ -85,10 +87,7 @@ $(function() {
     /*******************************************************/
     //NEWS SLIDER
     /*******************************************************/
-    // $headerBanner.wrapAll('<div class="header__slider owl-carousel"></div>');
     $('.research__box').addClass('owl-carousel').owlCarousel({
-        // animateOut: 'fadeOut',
-        // animateIn: 'fadeIn',
         loop: true,
         items: 1,
         nav: true,
@@ -96,6 +95,14 @@ $(function() {
         autoplay: true,
         autoplayTimeout: 10000,
         smartSpeed: 1200
+    });
+
+    /*******************************************************/
+    //SEX TABS
+    /*******************************************************/
+    $('.disease__sex-img img').not(':first').hide();
+    $('.disease__sex-buttons').on('click', 'label', function() {
+        $(this).closest('.disease__sex').find('.disease__sex-img img').hide().eq($(this).index()).show();
     });
 
     //------------------------------------------------------------
@@ -129,7 +136,7 @@ $(function() {
 
     var $header = $('.header');
     function fullscreen() {
-        if($html.hasClass('ie') || $html.hasClass('gecko')) {
+        if(($html.hasClass('ie') || $html.hasClass('gecko')) && $body.hasClass('home') ) {
             $header.removeAttr('style');
             var windowHeight = $window.height(),
                 headerHeight = $header.height();
