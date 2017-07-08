@@ -7,6 +7,9 @@
 .blog__title {
     @extend .title;
 }
+.blog__subtitle {
+    @extend .subtitle;
+}
 .blog__box {
     margin: 8rem 0 0 0;
     display: flex;

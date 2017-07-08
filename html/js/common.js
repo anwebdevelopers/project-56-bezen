@@ -60,9 +60,9 @@ $(function() {
         });
     }
 
-    //------------------------------------------------------------
+    /*******************************************************/
     //SLIDER NEWS
-    //------------------------------------------------------------
+    /*******************************************************/
     $('.news__box').addClass('owl-carousel').owlCarousel({
         loop: true,
         nav: true,
@@ -105,13 +105,51 @@ $(function() {
         $(this).closest('.disease__sex').find('.disease__sex-img img').hide().eq($(this).index()).show();
     });
 
-    //------------------------------------------------------------
+    /*******************************************************/
     //HOVER FOR IOS
-    //------------------------------------------------------------
+    /*******************************************************/
     $('.news__item').hover(function() {
         $(this).addClass('active');
     }, function() {
         $(this).removeClass('active');
+    });
+
+    /*******************************************************/
+    //SLIDER GALLERY
+    /*******************************************************/
+    $('.gallery').addClass('owl-carousel').owlCarousel({
+        nav: true,
+        navText: '',
+        smartSpeed: 600,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            481: {
+                items: 2
+            },
+            961: {
+                items: 3,
+            }
+        }
+    }).magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+
+    /*******************************************************/
+    //VIDEO
+    /*******************************************************/
+    $('.popup-youtube').magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
     });
 
     /*******************************************************/

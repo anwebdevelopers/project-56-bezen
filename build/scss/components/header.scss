@@ -418,21 +418,64 @@
         &.header__banner_photo {
             position: relative;
             padding-right: calc(33% + 7rem);
+            .header__photo {
+                position: absolute;
+                z-index: 1;
+                right: 7rem;
+                top: 12rem;
+                width: 30%;
+            }
+            .header__date {
+                position: absolute;
+                top: 7rem;
+                right: 7rem;
+            }
             ~ .header__content {
                 padding-right: calc(33% + 7rem);
             }
         }
     }
+    &.header__banner_drug {
+        padding: 0;
+        color: #fff;
+        .header__photo {
+            position: relative;
+            z-index: 1;
+            padding: 7rem;
+            background-color: $light;
+            text-align: center;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                transform: translateY(100%);
+                border: 1rem solid transparent;
+                border-top: 1.2rem solid $light;
+            }
+        }
+        .header__content {
+            background-color: $dark;
+        }
+    }
 }
-// .header__box {
-//
-//     padding: 7rem 7rem 10rem 7rem;
-//     background-color: lighten($light, 52%);
-//     background-size: cover;
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//     color: #fff;
-// }
+.header__box {
+    display: flex;
+}
+.header__left {
+    flex: 0 0 auto;
+    width: 60%;
+    padding: 7rem 7rem 10rem 7rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header__right {
+    flex: 0 0 auto;
+    width: 40%;
+}
 .header__content {
     @extend .tilde;
     &:before {
@@ -515,11 +558,6 @@
 }
 .header__photo {
     margin: 0;
-    position: absolute;
-    z-index: 1;
-    right: 7rem;
-    top: 12rem;
-    width: 30%;
     img {
         max-width: 100%;
         width: auto;
@@ -527,9 +565,6 @@
     }
 }
 .header__date {
-    position: absolute;
-    top: 7rem;
-    right: 7rem;
     font-size: 1.5rem;
 }
 @media only screen and (max-width : 1600px) {
@@ -658,17 +693,27 @@
                 }
             }
         }
+        &.header__banner_photo {
+            .header__photo {
+                top: 10rem;
+                right: 5rem;
+            }
+            .header__date {
+                top: 5rem;
+                right: 5rem;
+            }
+        }
+        &.header__banner_drug {
+            &:before {
+                display: none;
+            }
+            .header__photo {
+                padding: 5rem;
+            }
+        }
     }
-    .header__photo {
-        top: 10rem;
-        right: 5rem;
-    }
-    .header__date {
-        top: 5rem;
-        right: 5rem;
-    }
-
-    .header__content {
+    .header__content,
+    .header__left {
         padding: 5rem 5rem 6rem 5rem;
     }
 }
@@ -677,15 +722,47 @@
     .header__banner {
         padding: 5rem 20% 7rem 5rem;
     }
+    .header__title {
+        font-size: 6rem;
+    }
 }
 
 @media only screen and (max-width : 640px) {
     .header__banner {
         padding: 5rem 5rem 7rem 5rem;
-
+        &.header__banner_page {
+            &.header__banner_photo {
+                padding-right: 15px;
+                .header__photo {
+                    position: static;
+                    width: auto;
+                    margin: 3rem 0 0 0;
+                }
+                .header__date {
+                    position: static;
+                    margin: 1rem 0 0 0;
+                }
+                ~ .header__content {
+                    padding-right: 3rem;
+                }
+            }
+        }
+        &.header__banner_drug {
+            .header__content {
+                text-align: left;
+            }
+        }
     }
+    .header__box {
+        display: block;
+    }
+    .header__left,
+    .header__right {
+        width: auto;
+    }
+
     .header__title {
-        font-size: 6rem;
+        font-size: 5rem;
     }
 }
 
@@ -707,25 +784,10 @@
             padding: 5rem 15px 7rem 15px;
             &.header__banner_photo {
                 padding-right: 15px;
-                ~ .header__content {
-                    padding-right: 3rem;
-                }
             }
         }
     }
-    .header__photo {
-        position: static;
-        width: auto;
-        margin: 3rem 0 0 0;
-    }
-    .header__date {
-        position: static;
-        margin: 1rem 0 0 0;
-    }
-    // .header__box {
-    //     padding: 5rem 15px 7rem 15px;
-    //     text-align: center;
-    // }
+
     .header__content {
         &:before {
             left: 1rem;
@@ -733,7 +795,7 @@
         padding: 5rem 3rem 6rem 5rem;
     }
     .header__title {
-        font-size: 5rem;
+        font-size: 4rem;
     }
     .header__button {
         align-self: center;
@@ -741,7 +803,5 @@
 }
 
 @media only screen and (max-width : 360px) {
-    .header__title {
-        font-size: 4rem;
-    }
+
 }
