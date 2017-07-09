@@ -438,6 +438,16 @@
     &.header__banner_drug {
         padding: 0;
         color: #fff;
+        .header__title,
+        .header__button {
+            margin-top: auto;
+        }
+        .header__title {
+            padding-top: 2rem;
+        }
+        .header__subtitle {
+            padding-bottom: 2rem;
+        }
         .header__photo {
             position: relative;
             z-index: 1;
@@ -470,7 +480,6 @@
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 .header__right {
     flex: 0 0 auto;
@@ -515,8 +524,8 @@
             color: lighten($light, 20%);
         }
     }
-    ~ .header__title,
-    ~ .header__subtitle {
+    + .header__title,
+    + .header__subtitle {
         margin-top: 6rem;
     }
 }
@@ -732,7 +741,7 @@
         padding: 5rem 5rem 7rem 5rem;
         &.header__banner_page {
             &.header__banner_photo {
-                padding-right: 15px;
+                padding-right: 5rem;
                 .header__photo {
                     position: static;
                     width: auto;

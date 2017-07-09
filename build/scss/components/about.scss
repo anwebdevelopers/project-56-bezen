@@ -17,7 +17,11 @@
     flex: 0 0 auto;
     width: 37%;
     padding: 8rem 2rem 8rem 6rem;
-    border: 2rem solid transparent;
+    // border: 2rem solid $light;
+
+    border-width: 2rem;
+    border-style: solid;
+    border-color: $light;
     border-image: url(../img/bg-about.jpg) 27;
     font-size: 2rem;
     line-height: 1.6;

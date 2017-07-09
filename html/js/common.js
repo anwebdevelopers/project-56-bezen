@@ -108,7 +108,7 @@ $(function() {
     /*******************************************************/
     //HOVER FOR IOS
     /*******************************************************/
-    $('.news__item').hover(function() {
+    $('.news__item, .research__item, .blog__item').hover(function() {
         $(this).addClass('active');
     }, function() {
         $(this).removeClass('active');
@@ -151,6 +151,49 @@ $(function() {
         preloader: false,
         fixedContentPos: false
     });
+
+    /*******************************************************/
+    //POPUP
+    /*******************************************************/
+
+    // $.magnificPopup.open({
+    //     items: {
+    //         src: '.popup',
+    //         type: 'inline'
+    //     },
+    //     fixedContentPos: false,
+    //     showCloseBtn: false
+    // });
+
+    //*****************************************************
+    // Google Map
+    //*****************************************************
+    if(typeof google === 'object' && typeof google.maps === 'object' && $('#map').length) {
+        var markerPosition = new google.maps.LatLng(55.763319, 37.551117);
+
+        function initialize() {
+            var loc, map;
+
+            loc = new google.maps.LatLng(55.763319, 37.551117);
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                 zoom: 12,
+                 center: loc,
+                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                 scrollwheel: false
+            });
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: markerPosition,
+                visible: true,
+                icon: 'img/icon-map.png'
+            });
+        }
+        initialize();
+        google.maps.event.addDomListener(window, 'load', initialize);
+    }
+
 
     /*******************************************************/
     //Chrome Smooth Scroll

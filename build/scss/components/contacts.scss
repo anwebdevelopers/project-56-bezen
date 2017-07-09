@@ -1,0 +1,108 @@
+.contacts {
+    padding-bottom: 7rem;
+}
+.contacts__container {
+    @extend .container;
+}
+.contacts__box {
+    display: flex;
+}
+.contacts__content {
+    flex: 0 0 auto;
+    width: 45%;
+    padding: 7rem;
+    color: #fff;
+    background-color: $medium;
+    background-image: linear-gradient(to right top, $medium, $light);
+}
+.contacts__title {
+    @extend .title;
+    &:after {
+        display: none;
+    }
+    color: inherit;
+}
+.contacts__list {
+    margin: 7rem 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+.contacts__item {
+    position: relative;
+    margin: 3rem 0 0 0;
+    padding: 0 0 0 3.5rem;
+}
+.contacts__list-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    color: $light;
+}
+.contacts__list-title {
+    margin: 0;
+}
+.contacts__list-text {
+    margin: .5rem 0 0 0;
+    font-style: normal;
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: all .5s ease;
+    	&:hover, &:active {
+    		color: lighten($light, 20%);
+    	}
+    }
+}
+.contacts__button {
+    @extend .button;
+    margin: 6rem 0 0 0;
+}
+.contacts__map {
+    flex: 0 0 auto;
+    width: 55%;
+    min-height: 50rem;
+}
+@media only screen and (max-width : 1600px) {
+
+}
+
+@media only screen and (max-width : 1400px) {
+
+}
+
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 960px) {
+    .contacts__content {
+        padding: 7rem 5rem;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .contacts__content {
+        padding: 7rem 3rem;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+    .contacts__box {
+        display: block;
+    }
+    .contacts__content {
+        width: auto;
+    }
+    .contacts__map {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+
+}

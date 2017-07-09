@@ -38,8 +38,7 @@
         height: auto;
     }
 }
-
-.disease__switch {
+.switch {
     margin: 4rem 0 0 0;
     label {
         cursor: pointer;
@@ -58,11 +57,16 @@
             border-radius: 4rem;
             font-weight: 600;
             color: $dark;
+            background-color: #fff;
             border: 2px solid $light;
             transition: all .5s ease;
         }
     }
 }
+.disease__switch {
+    @extend .switch;
+}
+
 .disease__sex-buttons {
     margin: 5rem 0 0 0;
     span {
