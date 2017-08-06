@@ -11,6 +11,9 @@
     @extend .subtitle;
 }
 .page__box {
+    &.page__box_max_height {
+        overflow: hidden;
+    }
     margin-top: 8rem;
     &:first-child {
         margin-top: 0;
@@ -66,7 +69,7 @@
     }
     table {
         position: relative;
-        width: 100%;
+        width: calc(100% - .5rem);
         border-spacing: 0;
         border-collapse: collapse;
         table-layout: fixed;
@@ -91,6 +94,18 @@
         }
     }
 
+}
+.page__box-show {
+    @include btn;
+    margin: 3rem 0 0 0;
+    color: $dark;
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all .5s ease;
+    &:hover, &:active {
+       color: $light;
+    }
 }
 .gallery {
     &.owl-carousel {

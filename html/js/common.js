@@ -165,6 +165,58 @@ $(function() {
     //     showCloseBtn: false
     // });
 
+    /*******************************************************/
+    //PAGE BOX MAX HEIGHT
+    /*******************************************************/
+
+    var $pageBoxMaxHeight = $('.page__box_max_height');
+
+    $pageBoxMaxHeight.each(function() {
+        var $this = $(this),
+            $thisHeight = $this.height();
+        if($thisHeight >= 300) {
+            $this.css({
+                'max-height' : '31rem'
+            }).after('<button type="button" class="page__box-show hide">Читать подробнее...</button>');
+        }
+    });
+
+    $('.page__box-show').on('click', function() {
+        var $this = $(this);
+        if ($this.hasClass('hide')) {
+            $this.removeClass('hide')
+            var $thisTextHeight = $this.prev($pageBoxMaxHeight).removeAttr('style').height();
+            $this.html('Скрыть...').prev($pageBoxMaxHeight).css({
+                'max-height' : '31rem'
+            }).animate({
+                'max-height' : $thisTextHeight + 'px'
+            }, 300);
+        } else {
+            $this.html('Читать подробнее...').addClass('hide').prev($pageBoxMaxHeight).animate({
+                'max-height' : '31rem'
+            }, 300);
+        }
+    });
+
+    /*******************************************************/
+    //Аккордеон technologi
+    /*******************************************************/
+    var $questionsItem = $('.questions__item'),
+        $questionsItemTitle = $('.questions__item-title'),
+        $questionsItemText = $('.questions__item-text');
+
+    $questionsItemTitle.addClass('hide');
+    $questionsItemText.hide();
+
+    $questionsItemTitle.on('click', function() {
+        var $this = $(this);
+        if($this.hasClass('hide')) {
+            $this.removeClass('hide').closest($questionsItem).find($questionsItemText).slideDown(300);
+        } else {
+            $this.addClass('hide').closest($questionsItem).find($questionsItemText).slideUp(300);
+        }
+    });
+
     //*****************************************************
     // Google Map
     //*****************************************************
