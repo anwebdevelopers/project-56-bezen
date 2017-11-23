@@ -217,6 +217,17 @@ $(function() {
         }
     });
 
+    /*******************************************************/
+    //SEX TABS
+    /*******************************************************/
+    $('.condition__tabs-sections-item').not(':first').hide();
+    $('.condition__tabs-buttons-item').first().addClass('active');
+    $('.condition__tabs-buttons').on('click', '.condition__tabs-buttons-item:not(.active)', function() {
+        var $this = $(this);
+        $this.addClass('active').siblings().removeClass('active').closest('.condition__tabs').find('.condition__tabs-sections-item').slideUp(300).eq($this.index()).slideDown(300);
+        $('html, body').animate({scrollTop: $this.closest('.condition__tabs').find('.condition__tabs-sections').offset().top }, 600, 'swing');
+    });
+
     //*****************************************************
     // Google Map
     //*****************************************************
